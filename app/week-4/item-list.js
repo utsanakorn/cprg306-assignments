@@ -15,7 +15,7 @@ export default function ItemList() {
     <div className="space-y-6">
       {Object.entries(groupedItems).map(([category, items]) => (
         <section key={category}>
-          <h2 className="text-xl font-semibold capitalize mb-2">
+             <h2 className="text-xl font-semibold capitalize mb-2">
             {category}
           </h2>
           <ul className="space-y-3">
