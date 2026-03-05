@@ -31,6 +31,9 @@ export default function NewItem({ onAddItem }) {
       className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md"
     >
       <div className="mb-4">
+        <p className="text-black">Item name</p>
+        
+        
         <input
           type="text"
           value={name}
@@ -42,20 +45,31 @@ export default function NewItem({ onAddItem }) {
       </div>
 
       <div className="flex gap-4 mb-4">
-        <input
-          type="number"
-          min="1"
-          max="99"
-          value={quantity}
-          onChange={(e) => setQuantity(Number(e.target.value))}
-          className="w-20 p-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+       <div className="mb-4">
+        <p className="text-gray-500 text-sm mb-1">Quantity (1–20)</p>
+        <p className="text-gray-400 mb-2">Current: <span className="text-blue-400 font-semibold">{quantity}</span></p>
+      <div className="flex gap-2">
+    <button
+      type="button"
+      onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+      className="w-10 h-10 bg-gray-200 text-black font-bold rounded-md hover:bg-gray-300"
+      >−
+    </button>
+    <button
+      type="button"
+      onClick={() => setQuantity((q) => Math.min(20, q + 1))}
+      className="w-10 h-10 bg-blue-500 text-white font-bold rounded-md hover:bg-blue-600"
+    >
+      +
+    </button>
+  </div>
 
-        <select
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-          className="flex-1 p-2 border  text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        >
+  <p className="text-gray-400 mb-2">Category</p>
+       <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        className="w-full p-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
           <option value="produce">Produce</option>
           <option value="dairy">Dairy</option>
           <option value="bakery">Bakery</option>
@@ -69,13 +83,15 @@ export default function NewItem({ onAddItem }) {
           <option value="other">Other</option>
         </select>
       </div>
-
+</div>
       <button
         type="submit"
-        className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600 transition duration-200 font-bold text-lg"
+        className="w-40 h-10 bg-green-500 text-white p-2 rounded-md hover:bg-blue-600 transition duration-200 font-bold text-lg"
       >
-        +
+        Add Item
       </button>
+      
+      
     </form>
   );
 }

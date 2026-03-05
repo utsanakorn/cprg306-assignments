@@ -5,6 +5,7 @@ import Item from "./item";
 
 export default function ItemList({ items }) {
   const [sortBy, setSortBy] = useState("name");
+  
 
   const sortedItems = [...items].sort((a, b) => {
     if (sortBy === "name") return a.name.localeCompare(b.name);
@@ -22,9 +23,13 @@ export default function ItemList({ items }) {
   }, {});
 
   return (
+      
     <div className="space-y-6">
 
       <div className="flex gap-2">
+        
+        <p className="text-gray-400 mb-2">Sort by:</p>
+
         <button
           onClick={() => setSortBy("name")}
           className={`px-4 py-1 rounded-md font-semibold transition ${
@@ -33,7 +38,7 @@ export default function ItemList({ items }) {
               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
           }`}
         >
-          Sort by Name
+           Name
         </button>
         <button
           onClick={() => setSortBy("category")}
@@ -43,7 +48,7 @@ export default function ItemList({ items }) {
               : "bg-gray-200 text-gray-700 hover:bg-gray-300"
           }`}
         >
-          Sort by Category
+           Category
         </button>
       </div>
 
@@ -54,7 +59,7 @@ export default function ItemList({ items }) {
           </h2>
           <ul className="space-y-3">
             {items.map((item) => (
-              <Item key={item.id} {...item} />
+              <Item key={item.id} item={item} />
             ))}
           </ul>
         </section>
