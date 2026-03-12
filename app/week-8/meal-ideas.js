@@ -50,11 +50,11 @@ export default function MealIdeas({ ingredient }) {
                   className="bg-slate-700 p-4 rounded-lg hover:bg-slate-600 transition"
                 >
                   <div className="flex items-center gap-4">
-                    <img
+                    {/*<img
                       src={meal.strMealThumb}
                       alt={meal.strMeal}
                       className="w-20 h-20 rounded-lg object-cover"
-                    />
+                    />*/}
                     <span className="text-white font-semibold text-lg">
                       {meal.strMeal}
                     </span>
