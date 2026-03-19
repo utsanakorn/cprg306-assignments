@@ -18,7 +18,6 @@ async function fetchMealIdeas(ingredient) {
 export default function MealIdeas({ ingredient }) {
   const [meals, setMeals] = useState([]);
 
-  // ฟังก์ชันโหลดข้อมูล
   async function loadMealIdeas() {
     if (ingredient) {
       const mealIdeas = await fetchMealIdeas(ingredient);
