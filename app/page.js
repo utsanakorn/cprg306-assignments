@@ -13,7 +13,6 @@ export default function Page() {
       <Link href="/week-7" className="text-xl ">Go to Week 7 → </Link>
       <Link href="/week-8" className="text-xl ">Go to Week 8 → </Link>
       <Link href="/week-9" className="text-xl ">Go to Week 9 → </Link>
-      <Link href="/week-9" className="text-xl ">Go to Week 9 → </Link>
       <Link href="/week-10" className="text-xl ">Go to Week 10 </Link>
 
 
